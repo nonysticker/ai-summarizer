@@ -46,6 +46,17 @@ const Demo = () => {
     setTimeout(() => setCopied(false), 3000);
   };
 
+  const handleClear = () => {
+    const currentArticlesFromLocalStorage = JSON.parse(
+      localStorage.getItem('articles')
+    );
+
+    if (currentArticlesFromLocalStorage) {
+      setAllArticles([]);
+      localStorage.removeItem('articles');
+    }
+  };
+
   return (
     <section className='mt-16 w-full max-w-xl'>
       {/* Search */}
@@ -78,7 +89,7 @@ const Demo = () => {
         </form>
 
         {/* Browse URL History */}
-        <div className='flex flex-col gap-1 max-h-60 overflow-y-auto'>
+        <div className='flex flex-col gap-1 max-h-60 overflow-y-auto scrollbar-none'>
           {allArticles.map((item, index) => (
             <div
               key={`link-${index}`}
@@ -98,12 +109,23 @@ const Demo = () => {
             </div>
           ))}
         </div>
+        {allArticles.length > 0 && (
+          <div className='flex justify-end'>
+            <button
+              onClick={handleClear}
+              type='button'
+              className='px-2 border border-gray-200 rounded-md text-gray-200 hover:opacity-80 text-sm'
+            >
+              Clear
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Display Results */}
       <div className='my-10 max-w-full flex justify-center items-center'>
         {isFetching ? (
-          <img src={loader} alt='loader' className='w-20 h-20 object-contain' />
+          <img src={loader} alt='loader' className='w-32 h-32 object-contain' />
         ) : error ? (
           <p className='font-inter font-bold text-white text-center'>
             Well, that wasn&apos;t supposed to happen <br />{' '}
