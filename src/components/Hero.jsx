@@ -4,7 +4,14 @@ const Hero = () => {
   return (
     <header className='w-full flex justify-center items-center flex-col'>
       <nav className='flex justify-between items-center w-full mb-10 pt-3'>
-        <img src={logo} alt='summarizer logo' className='w-28 object-contain' />
+        <div className='flex items-center gap-2'>
+          <img
+            src={logo}
+            alt='summarizer logo'
+            className='h-9 object-contain'
+          />
+          <p className='text-3xl text-white font-extrabold'>Summarizer</p>
+        </div>
 
         <button
           type='button'
