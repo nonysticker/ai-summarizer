@@ -92,7 +92,7 @@ const Demo = () => {
                   className='w-[40%] h-[40%] object-contain'
                 />
               </div>
-              <p className='flex-1 font-satoshi text-blue-700 font-medium text-sm truncate'>
+              <p className='flex-1 font-satoshi text-purple-700 font-medium text-sm truncate'>
                 {item.url}
               </p>
             </div>
@@ -114,11 +114,11 @@ const Demo = () => {
         ) : (
           article.summary && (
             <div className='flex flex-col gap-3'>
-              <h2 className='font-satoshi font-bold text-gray-600 text-xl'>
-                Article <span className='blue_gradient'>Summary</span>
+              <h2 className='font-satoshi font-bold text-gray-50 text-xl'>
+                Article <span className='purple_gradient'>Summary</span>
               </h2>
               <div className='summary_box'>
-                <p className='font-inter font-medium text-sm text-gray-700'>
+                <p className='font-inter font-medium text-sm text-gray-300'>
                   {article.summary}
                 </p>
               </div>
