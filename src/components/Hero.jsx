@@ -27,9 +27,8 @@ const Hero = () => {
         <span className='purple_gradient'>OpenAI GPT-4</span>
       </h1>
       <h2 className='desc'>
-        Simplify your reading with AI Summarizer, an open-source article
-        summarizer that transforms lengthy articles into clear and concise
-        summaries.
+        Experience effortless reading with AI Summarizer, a powerful open-source
+        tool that condenses lengthy articles into concise summaries.
       </h2>
     </header>
   );
